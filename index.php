@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '\Models\Photos.php';
+require_once __DIR__ . '/functions/autoload.php';
 
 $items = Photos::getAll();
 

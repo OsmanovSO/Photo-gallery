@@ -1,13 +1,11 @@
 <?php
 
-require_once __DIR__ . '\..\Classes\DB.php';
-
 class Photos
 {
-   /* public $id;
+    public $id;
     public $title;
     public $patch;
-*/
+
     public static function getAll()
     {
         $db = new DB;

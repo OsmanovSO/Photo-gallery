@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '\Models\Photos.php';
-require_once __DIR__ . '\functions\File_upload.php';
+require_once __DIR__ . '/functions/autoload.php';
+require_once __DIR__ . '/functions/File_upload.php';
 
 if (!empty($_POST))
 {
