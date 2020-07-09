@@ -16,4 +16,9 @@ class Photos
         $db = new DB;
         $db->exec("INSERT INTO news (title, patch) VALUES ('" . $data['title'] . "', '" . $data['image'] . "')");
     }
+    public function Photo_delite($id)
+    {
+        $db = new DB;
+        $db->delite("DELETE FROM news WHERE id = $id");
+    }
 }
