@@ -8,6 +8,8 @@ class DB
         mysql_select_db('test');
     }
 
+
+
     public function query($sql, $class = 'stdClass')
     {
         $res = mysql_query($sql)or die('Ошибка! Код ошибки: '.mysql_error());
@@ -24,6 +26,11 @@ class DB
     }
 
     public function exec($sql)
+    {
+        mysql_query($sql)or die('Ошибка! Код ошибки: '.mysql_error());
+    }
+
+    public function delite($sql)
     {
         mysql_query($sql)or die('Ошибка! Код ошибки: '.mysql_error());
     }
