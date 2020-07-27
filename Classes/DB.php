@@ -4,8 +4,10 @@ class DB
 {
     public function __construct()
     {
-        mysql_connect('localhost', 'root', '');
-        mysql_select_db('test');
+        require_once '/configFile/configFileDB.php';
+        
+        mysql_connect($host, $user, $password);
+        mysql_select_db($database);
     }
 
 
