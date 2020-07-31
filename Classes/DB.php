@@ -4,23 +4,28 @@ class DB
 {
     public function __construct()
     {
-        require_once '/configFile/configFileDB.php';
-        
-        mysql_connect($host, $user, $password);
-        mysql_select_db($database);
+
+//        $jsonFile = json_decode(require_once ('/configFile/confJson.txt'));
+//        var_dump($jsonFile);
+//        die();
+
+        $conf = require_once '/configFile/configFileDB.php';
+
+        mysql_connect($conf['host'], $conf['user'], $conf['password']);
+        mysql_select_db($conf['database']);
     }
 
 
 
     public function query($sql, $class = 'stdClass')
     {
-        $res = mysql_query($sql)or die('Ошибка! Код ошибки: '.mysql_error());
-        if (false == $res)
+        $queryResult = mysql_query($sql)or die('Ошибка! Код ошибки: '.mysql_error());
+        if (false == $queryResult)
         {
             return false;
         }
         $ret = [];
-        while ($row = mysql_fetch_object($res, $class))
+        while ($row = mysql_fetch_object($queryResult, $class))
         {
             $ret[] = $row;
         }
@@ -32,7 +37,7 @@ class DB
         mysql_query($sql)or die('Ошибка! Код ошибки: '.mysql_error());
     }
 
-    public function delite($sql)
+    public function delete($sql)
     {
         mysql_query($sql)or die('Ошибка! Код ошибки: '.mysql_error());
     }

@@ -1,6 +1,8 @@
 <?php
 //Класс для добавления файлов
- function upload($file)
+class File_upload{
+
+    public static function upload($file)
     {
         if (empty($_FILES))
 
@@ -11,9 +13,9 @@
             return false;
 
         if (is_uploaded_file($_FILES[$file]['tmp_name'])) {
-            $res = move_uploaded_file($_FILES[$file]['tmp_name'], __DIR__ . '/../img/' . $_FILES[$file]['name']);
+            $downloadedFileLocation = move_uploaded_file($_FILES[$file]['tmp_name'], __DIR__ . '/../img/' . $_FILES[$file]['name']);
 
-            if (!$res) {
+            if (!$downloadedFileLocation) {
                 return false;
             } else {
                 return '/img/' . $_FILES[$file]['name'];
@@ -21,3 +23,5 @@
         }
         return false;
     }
+}
+

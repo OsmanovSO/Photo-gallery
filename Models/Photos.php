@@ -5,20 +5,22 @@ class Photos
     public $id;
     public $title;
     public $patch;
-
+//Функция выборки фотографий из БД
     public static function getAll()
     {
         $db = new DB;
         return $db->query('select * FROM news', 'Photos');
     }
-    public function Photo_insert($data)
+    //Функция добавления фотографий в БД
+    public function insert($data)
     {
         $db = new DB;
         $db->exec("INSERT INTO news (title, patch) VALUES ('" . $data['title'] . "', '" . $data['image'] . "')");
     }
-    public function Photo_delite($id)
+    //Функция удаления фотографий из БД
+    public function delete($id)
     {
         $db = new DB;
-        $db->delite("DELETE FROM news WHERE id = $id");
+        $db->delete("DELETE FROM news WHERE id = $id");
     }
 }

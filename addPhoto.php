@@ -11,18 +11,19 @@ if (!empty($_POST))
     }
     if (!empty($_FILES))
     {
-       $res = upload('image');
-         if (false !== $res)
+
+        $downloadedFileLocation = File_upload::upload('image');
+         if (false !== $downloadedFileLocation)
          {
-             $data['image'] = $res;
+             $data['image'] = $downloadedFileLocation;
 
          }
     }
 
     if (isset($data['title']) && isset($data['image']))
     {
-        $res = new Photos;
-        $res->Photo_insert($data);
+        $insert = new Photos;
+        $insert->insert($data);
         header('Location: /');
     }
 
