@@ -8,7 +8,7 @@ class DB
 //        $jsonFile = json_decode(require_once ('/configFile/confJson.txt'));
 //        var_dump($jsonFile);
 //        die();
-   
+
         $conf = require_once '/configFile/configFileDB.php';
 
         mysql_connect($conf['host'], $conf['user'], $conf['password']);
