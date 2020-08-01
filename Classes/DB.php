@@ -5,11 +5,12 @@ class DB
     public function __construct()
     {
 
-//        $jsonFile = json_decode(require_once ('/configFile/confJson.txt'));
+     $jsonFile = json_decode(require_once ('/configFile/confJson.txt'));
 //        var_dump($jsonFile);
 //        die();
 
-        $conf = require_once '/configFile/configFileDB.php';
+
+        $conf = parse_ini_file('/configFile/configFileDB.ini');
 
         mysql_connect($conf['host'], $conf['user'], $conf['password']);
         mysql_select_db($conf['database']);
