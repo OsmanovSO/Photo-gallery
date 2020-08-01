@@ -5,7 +5,7 @@ class DB
     public function __construct()
     {
 
-     $jsonFile = json_decode(require_once ('/configFile/confJson.txt'));
+//     $jsonFile = json_decode(require_once ('/configFile/confJson.txt'));
 //        var_dump($jsonFile);
 //        die();
 
