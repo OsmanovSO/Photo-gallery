@@ -1,7 +1,14 @@
 <?php
 //Класс для добавления файлов
-class File_upload{
 
+/**
+ * Class File_upload
+ */
+class File_upload{
+    /**
+     * @param $file
+     * @return bool|string
+     */
     public static function upload($file)
     {
         if (empty($_FILES))

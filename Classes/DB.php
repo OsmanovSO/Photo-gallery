@@ -1,7 +1,13 @@
 <?php
 
+/**
+ * Class DB
+ */
 class DB
 {
+    /**
+     * DB constructor.
+     */
     public function __construct()
     {
 
@@ -17,7 +23,11 @@ class DB
     }
 
 
-
+    /**
+     * @param $sql
+     * @param string $class
+     * @return array|bool
+     */
     public function query($sql, $class = 'stdClass')
     {
         $queryResult = mysql_query($sql)or die('Ошибка! Код ошибки: '.mysql_error());
@@ -33,11 +43,17 @@ class DB
         return $ret;
     }
 
+    /**
+     * @param $sql
+     */
     public function exec($sql)
     {
         mysql_query($sql)or die('Ошибка! Код ошибки: '.mysql_error());
     }
 
+    /**
+     * @param $sql
+     */
     public function delete($sql)
     {
         mysql_query($sql)or die('Ошибка! Код ошибки: '.mysql_error());
